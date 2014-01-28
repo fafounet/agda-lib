@@ -45,7 +45,7 @@ module LIST where
    append-assoc {as = []} = refl
    append-assoc {as = a :: as} = cons-congr (append-assoc {as = as})
      
-   map : ∀{a} {A B : Set a} → (A → B) → List A → List B
+   map : ∀{a b} {A : Set a} {B : Set b} → (A → B) → List A → List B
    map f [] = []
    map f (x :: xs) = f x :: map f xs
 
